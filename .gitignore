@@ -1,5 +1,22 @@
-.github/
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Directories
+resources
+data
+playground
+
+# Directories
 music_data/
+data/
 musicgen_dreamboothing.egg-info/
 example_configs/
 generated_music/
@@ -8,3 +25,6 @@ README_dreambooth.md
 dreambooth_musicgen.py
 processed_data/
 models/
+
+# secrets
+.env
