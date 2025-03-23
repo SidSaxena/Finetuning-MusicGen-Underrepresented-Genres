@@ -26,24 +26,37 @@ We fine-tuned MusicGen-Melody using LoRA (Low-Rank Adaptation) to create models 
 
 ## Setup and Installation
 
-Run this in order to install the requirements
+Run either of these commands to install the requirements for the project
 
-%pip install --quiet git+https://github.com/ylacombe/musicgen-dreamboothing demucs msclap transformers wordcloud python-dotenv
+```bash
+pip install --quiet git+https://github.com/ylacombe/musicgen-dreamboothing demucs msclap transformers wordcloud python-dotenv
+```
+
+or
+
+```bash
+pip install -r requirements.txt
+```
 
 ## Running and Reproducibility
 
 If you are using your own dataset locally, we provide two scripts in order to structure the audio files in a suitable format for the pre-processing and training using the MusicGen model
 1. Run the chunkmusic.py to segment your audio files into 30 second or lesser chunks in the desired format
-How to run chunkmusic.py (example): python chunkmusic.py --input-dir "path/to/data" --output-dir "music_data/path" --chunk-duration 30 --format mp3
+How to run chunkmusic.py (example): 
+
+```bash
+python chunkmusic.py --input-dir "path/to/data" --output-dir "data/audio/" --chunk-duration 30 --format mp3
+```
 
 2. Run preprocess_data.py to format and create your dataset metadata file using:
-python preprocess_data.py --chunks-dir "path" --output-dir "music_data/path" --sample-rate 32000
+
+```bash
+python preprocess_data.py --chunks-dir "path" --output-dir "data/datasets/" --sample-rate 32000
+```
 
 3. Use the notebook provided and follow the steps to preprocess data and train with MusicGen-melody model
 - We use **demucs** in the case the audio has vocals. MusicGen is trained only on Instrumental music, so requires music without vocals in them
 - **CLAP** embeddings are used to extract metadata from the dataset
-
-
 
 ---
 ---
@@ -81,3 +94,34 @@ The final project deliverables are:
 1. 4-5 page "conference" paper
 2. A GitHub repository link containing the implementation code in the course Github Classroom.
 3. A 5-minute video (like you would send to a conference) presenting your work including any demos.
+
+
+## License
+
+The code in this repository is released under the Apache license as found in the LICENSE file. The pre-trained MusicGen 
+weights are licenced under CC-BY-NC 4.0.
+
+## Acknowledgements
+
+This project builds on top of a number of open-source projects, to whom we'd like to extend our warmest thanks for providing these tools!
+
+Special thanks to:
+- MusicGen Dreamboothing by Yoach Lacombe (ylacombe) - [Repo](https://github.com/ylacombe/musicgen-dreamboothing)
+- The MusicGen team from Meta AI and their [audiocraft](https://github.com/facebookresearch/audiocraft) repository.
+- the many libraries used, to name but a few: [🤗 datasets](https://huggingface.co/docs/datasets/v2.17.0/en/index), [🤗 accelerate](https://huggingface.co/docs/accelerate/en/index), and [🤗 transformers](https://huggingface.co/docs/transformers/index).
+
+
+## Citation
+
+If you found this repository useful, please consider citing the original MusicGen paper:
+
+```
+@misc{copet2024simple,
+      title={Simple and Controllable Music Generation}, 
+      author={Jade Copet and Felix Kreuk and Itai Gat and Tal Remez and David Kant and Gabriel Synnaeve and Yossi Adi and Alexandre Défossez},
+      year={2024},
+      eprint={2306.05284},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD}
+}
+```
