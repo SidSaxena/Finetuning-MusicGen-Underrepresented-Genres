@@ -1,0 +1,10 @@
+.github/
+music_data/
+musicgen_dreamboothing.egg-info/
+example_configs/
+generated_music/
+MusicGen_Dreamboothing.ipynb
+README_dreambooth.md
+dreambooth_musicgen.py
+processed_data/
+models/
