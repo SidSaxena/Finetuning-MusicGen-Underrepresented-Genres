@@ -1,6 +1,56 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/bBEmmLm3)
 # Final Project: Part 2 Audio
 
+---
+
+# Fine-Tuning MusicGen for Under-Represented Genres
+
+### [Link to report - Fine-Tuning MusicGen for Under-Represented Genres](https://docs.google.com/document/d/1NhbUVf7CznpsCQemPcy1Me-4SQZAxHctpjJvE6tpas0/edit?usp=sharing)
+
+**Description:**
+This project explores fine-tuning Facebook's MusicGen for Indian classical fusion music generation using techniques inspired by DreamBooth, focusing on style transfer and preserving the characteristic sounds of Indian classical instruments like sitar and tabla within contemporary production contexts.
+
+## Project Overview
+We fine-tuned MusicGen-Melody using LoRA (Low-Rank Adaptation) to create models that can generate Indian classical fusion music, particularly in the style of Anoushka Shankar. Through multiple iterations, we developed models with increasingly refined understanding of the fusion genre, enhancing their ability to generate authentic-sounding compositions that blend traditional Indian classical elements with contemporary production techniques.
+
+## Available Models on Hugging Face 🤗
+
+| Model | Description | Link |
+|-------|-------------|------|
+| **The 1975 - artist fine tuned** | Fine-tuned for The 1975 band style | [🔗 MadJ99/musicgen-melody-the1975](https://huggingface.co/MadJ99/musicgen-melody-the1975) |
+| **Indian Classical Fusion 1** | Basic Indian classical fusion model | [🔗 MadJ99/musicgen-melody-as-ch3](https://huggingface.co/MadJ99/musicgen-melody-as-ch3) |
+| **Indian Classical Fusion 2** | Expanded dataset with detailed prompt | [🔗 MadJ99/musicgen-melody-as-traes](https://huggingface.co/MadJ99/musicgen-melody-as-traes) |
+| **Indian Classical Fusion 3** | Metadata updated for Anoushka Shankar style | [🔗 MadJ99/musicgen-melody-traes-updated](https://huggingface.co/MadJ99/musicgen-melody-traes-updated) |
+| **Indian Classical Fusion 4** | Latest model with more training data | [🔗 MadJ99/musicgen-melody-as-new-updated](https://huggingface.co/MadJ99/musicgen-melody-as-new-updated) |
+
+
+## Setup and Installation
+
+Run this in order to install the requirements
+
+%pip install --quiet git+https://github.com/ylacombe/musicgen-dreamboothing demucs msclap transformers wordcloud python-dotenv
+
+## Running and Reproducibility
+
+If you are using your own dataset locally, we provide two scripts in order to structure the audio files in a suitable format for the pre-processing and training using the MusicGen model
+1. Run the chunkmusic.py to segment your audio files into 30 second or lesser chunks in the desired format
+How to run chunkmusic.py (example): python chunkmusic.py --input-dir "path/to/data" --output-dir "music_data/path" --chunk-duration 30 --format mp3
+
+2. Run preprocess_data.py to format and create your dataset metadata file using:
+python preprocess_data.py --chunks-dir "path" --output-dir "music_data/path" --sample-rate 32000
+
+3. Use the notebook provided and follow the steps to preprocess data and train with MusicGen-melody model
+- We use **demucs** in the case the audio has vocals. MusicGen is trained only on Instrumental music, so requires music without vocals in them
+- **CLAP** embeddings are used to extract metadata from the dataset
+
+
+
+---
+---
+---
+
+## Task
+
 Think of your Audio Final Project as a conference research paper.
 It does not have to be "an original contribution to the literature", but can be a report on what you design as a learning project for yourself.
 You may have up to a maximum of 3 co-authors (projects evaluated accordingly).
