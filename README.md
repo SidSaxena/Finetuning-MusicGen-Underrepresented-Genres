@@ -5,12 +5,22 @@
 
 # Fine-Tuning MusicGen for Under-Represented Genres
 
-### [Link to report - Fine-Tuning MusicGen for Under-Represented Genres](https://docs.google.com/document/d/1NhbUVf7CznpsCQemPcy1Me-4SQZAxHctpjJvE6tpas0/edit?usp=sharing)
+## Links
+
+### [Report - Fine-Tuning MusicGen for Under-Represented Genres](https://docs.google.com/document/d/1NhbUVf7CznpsCQemPcy1Me-4SQZAxHctpjJvE6tpas0/edit?usp=sharing)
+
+### Demo Videos
+### [Presentation + Demo](https://drive.google.com/file/d/1wgQ6jA1T0IEMneqzn22M3rc4UUemrP1s/view?usp=sharing)
+
+### [Code Demo Only](https://drive.google.com/file/d/1MAMFWaDJXHKic1wcygzzwXT2TBOxOnQP/view?usp=drive_link)
+
+---
 
 **Description:**
 This project explores fine-tuning Facebook's MusicGen for Indian classical fusion music generation using techniques inspired by DreamBooth, focusing on style transfer and preserving the characteristic sounds of Indian classical instruments like sitar and tabla within contemporary production contexts.
 
 ## Project Overview
+
 We fine-tuned MusicGen-Melody using LoRA (Low-Rank Adaptation) to create models that can generate Indian classical fusion music, particularly in the style of Anoushka Shankar. Through multiple iterations, we developed models with increasingly refined understanding of the fusion genre, enhancing their ability to generate authentic-sounding compositions that blend traditional Indian classical elements with contemporary production techniques.
 
 ## Available Models on Hugging Face 🤗
