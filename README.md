@@ -1,7 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/bBEmmLm3)
-# Final Project: Part 2 Audio
-
----
 
 # Fine-Tuning MusicGen for Under-Represented Genres
 
@@ -134,4 +130,5 @@ If you found this repository useful, please consider citing the original MusicGe
       archivePrefix={arXiv},
       primaryClass={cs.SD}
 }
+
 ```
